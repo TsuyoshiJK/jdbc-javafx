@@ -202,10 +202,9 @@ public class SellerFormController implements Initializable {
 			 * ZoneId.systemDefault()));
 			 */
 			
-			// GETTRS e SETTRS que eu criei
+			// GETTRS e SETTRS do (LocalDateTime dpBirthDate1)
 			this.setDpBirthDate1(LocalDateTime.ofInstant(entity.getBirthDate().toInstant(), ZoneId.systemDefault()));
-			dpBirthDate.setValue(LocalDate.from(dpBirthDate1));
-			// this.getDpBirthDate1();
+			dpBirthDate.setValue(LocalDate.from(this.getDpBirthDate1()));
 		}
 		if (entity.getDepartment() == null) {
 			comboBoxDepartment.getSelectionModel().selectFirst();
@@ -215,9 +214,11 @@ public class SellerFormController implements Initializable {
 		}
 	}
 
-	/*
-	 * private LocalDateTime getDpBirthDate1() { return dpBirthDate1; }
-	 */
+	
+	private LocalDateTime getDpBirthDate1() { 
+		return dpBirthDate1; 
+		}
+	 
 	private void setDpBirthDate1(LocalDateTime dpBirthDate1) {
 		this.dpBirthDate1 = dpBirthDate1;
 	}
